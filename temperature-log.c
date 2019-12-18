@@ -1,6 +1,9 @@
 #include "24FC512.h"
 
 int main(){
+
+    clock_prescale_set(16);
+    
     i2c_init_master();
     while(1){
         i2c_start_condition();
