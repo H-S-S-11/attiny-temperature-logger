@@ -5,7 +5,7 @@
 
 void i2c_init_master();
 void i2c_start_condition();
-void i2c_master_send_byte(uint8_t data);
+uint8_t i2c_master_send_byte(uint8_t data);
 void i2c_stop_condition();
 
 #endif

@@ -1,4 +1,6 @@
 #include "24FC512.h"
+#include "i2c.h"
+#include <avr/power.h>
 
 int main(){
 
