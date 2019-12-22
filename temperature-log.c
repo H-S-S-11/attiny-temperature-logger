@@ -1,15 +1,15 @@
+#include "24FC512.h"
+#include "i2c.h"
 #include <avr/power.h>
-#include <util/delay.h>
-#include "usi_i2c_master.h"
 
 int main(){
-    //500kHz clock
+
     clock_prescale_set(16);
-    uint8_t eeprom_write_addr = 0xa0;
-    char i2c_message[6] = { eeprom_write_addr, 0x00, 0x00, 0x1a, 0x2b, 0x3c };
     
+    i2c_init_master();
     while(1){
-        USI_I2C_Master_Transceiver_Start(i2c_message, 6);
-        _delay_ms(1000);
+        i2c_start_condition();
+        i2c_master_send_byte(0xaa);
+        i2c_stop_condition();
     }
 }
