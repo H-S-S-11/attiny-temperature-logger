@@ -1,6 +1,6 @@
-#include "usi_i2c_master.h"
 #include <avr/power.h>
 #include <util/delay.h>
+#include "usi_i2c_master.h"
 
 int main(){
     //500kHz clock
