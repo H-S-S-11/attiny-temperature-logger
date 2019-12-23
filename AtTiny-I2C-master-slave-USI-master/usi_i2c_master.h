@@ -38,6 +38,16 @@
 	#define PIN_USI_SCL		PINA4
 #endif
 
+#if defined (__AVR_ATtiny85__)
+	#define DDR_USI			DDRB
+	#define PORT_USI		PORTB
+	#define PIN_USI			PIB
+	#define PORT_USI_SDA	PB0
+	#define PORT_USI_SCL	PB2
+	#define PIN_USI_SDA		PINB0
+	#define PIN_USI_SCL		PINB2
+#endif
+
 #if defined(__AVR_AT90Tiny2313__) | \
 	defined(__AVR_ATtiny2313__)
     #define DDR_USI             DDRB
@@ -51,6 +61,6 @@
 
 //USI I2C Master Transceiver Start
 // Starts the transceiver to send or receive data based on the r/w bit
-char USI_I2C_Master_Transceiver_Start(char *msg, char msg_size);
+char USI_I2C_Master_Start_Transmission(char *msg, char msg_size);
 
 #endif
