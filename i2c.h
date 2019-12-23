@@ -2,6 +2,11 @@
 
 #define i2c
 #include <avr/io.h>
+#include <util/delay.h>
+
+#define SDA PB0
+#define SCL PB2
+#define I2C_DELAY 5
 
 void i2c_init_master();
 void i2c_start_condition();
