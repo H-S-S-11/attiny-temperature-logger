@@ -1,14 +1,15 @@
 #ifndef EEPROM_24FC512
 
 #include <avr/io.h>
-#include "i2c.h"
+#include "usi_i2c_master.h"
 #define EEPROM_24FC512
 
-#define ADDRESS_24xx512 0x60
+#define ADDRESS_24xx512 0xa0
 
-void write_byte_24xx512(uint8_t cs_bits, uint16_t address, uint8_t byte);
+void write_byte_24xx512(char cs_bits, uint16_t address, char byte);
 
 //page writes up to 128 bytes
-void write_page_24xx512(uint8_t cs_bits, uint16_t address, uint8_t *byte_array, uint8_t length);
+//leave three blank spaces at the start of the array, include this in length
+void write_page_24xx512(char cs_bits, uint16_t start_address, char *byte_array, char length);
 
 #endif
