@@ -1,4 +1,3 @@
-# AtTiny-I2c-master-slave-USI
-I2C Master and Slave library using USI Hardware
+# ATiny temperature logger
 
-Forked from: https://github.com/CalcProgrammer1/Stepper-Motor-Controller/tree/master/UnipolarStepperDriver
+Reads temperature and Real time clock data then writes to an EEPROM over I2C
