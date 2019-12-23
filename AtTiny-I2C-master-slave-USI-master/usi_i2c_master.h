@@ -41,7 +41,7 @@
 #if defined (__AVR_ATtiny85__)
 	#define DDR_USI			DDRB
 	#define PORT_USI		PORTB
-	#define PIN_USI			PIB
+	#define PIN_USI			PINB
 	#define PORT_USI_SDA	PB0
 	#define PORT_USI_SCL	PB2
 	#define PIN_USI_SDA		PINB0
