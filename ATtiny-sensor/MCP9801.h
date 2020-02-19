@@ -8,7 +8,7 @@
 
 void set_pointer_ta(char cs_bits);
 
-uint16_t read_register(char cs_bits);
+uint16_t read_ta(char cs_bits);
 
 void write_config(char cs_bits, char config_data);
 
