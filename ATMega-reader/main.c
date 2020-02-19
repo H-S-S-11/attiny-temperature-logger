@@ -82,36 +82,40 @@ int main(void){
 	init_uart0();
 	i2c_init();
 		
-	uint8_t recieved_data[3];
-	uint8_t address[] = {0x00,0x00};
+	uint8_t recieved_data[2];
+	uint16_t address = 0x0001;
+	uint8_t address_buf[] = {0x00,0x00};
 	char buffer[10];
-	uint8_t to_send[3] = {0xab, 0xdc, 0x12};
+	//uint8_t to_send[3] = {0xab, 0xdc, 0x12};
 	
 
 	while(1){
 
-		
+		address_buf[0] = (uint8_t)address >> 8;
+		address_buf[1] = (uint8_t)address & 0x00ff;
+		address += 2;
 
 		i2c_start(MCP24FC512_WRITE);
-		i2c_write(address[0]); // set pointer to address
-		i2c_write(address[1]);
+		i2c_write(address_buf[0]); // set pointer to address
+		i2c_write(address_buf[1]);
 		
 		i2c_start(MCP24FC512_READ);
-
-		recieved_data[0] = i2c_read_ack();
-		recieved_data[1] = i2c_read_ack();
-		recieved_data[2] = i2c_read_nack();
-
-		i2c_stop();
-
-		i2c_start(MCP9801_READ);
 
 		recieved_data[0] = i2c_read_ack();
 		recieved_data[1] = i2c_read_nack();
 
 		i2c_stop();
 
-		sprintf(buffer, "%x %x %x \n\r", recieved_data[0], recieved_data[1], recieved_data[2]);
+		/*
+		i2c_start(MCP9801_READ);
+
+		recieved_data[0] = i2c_read_ack();
+		recieved_data[1] = i2c_read_nack();
+
+		i2c_stop();
+		*/
+
+		sprintf(buffer, "%x %x\n\r", recieved_data[0], recieved_data[1]);
 		put_str(buffer);
 		
 		
