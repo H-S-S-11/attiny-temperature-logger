@@ -29,7 +29,7 @@
 
 #define MCP24FC512_WRITE 0xA0
 #define MCP24FC512_READ 0xA1
-
+#define MCP9801_READ 0x91
 
 void init_uart0(void)
 {
@@ -87,15 +87,6 @@ int main(void){
 	char buffer[10];
 	uint8_t to_send[3] = {0xab, 0xdc, 0x12};
 	
-	/*
-	i2c_start(MCP24FC512_WRITE);
-	i2c_write(address[0]); // set pointer to address
-	i2c_write(address[1]);
-	i2c_write(to_send[0]);
-	i2c_write(to_send[1]);
-	i2c_write(to_send[2]);
-	i2c_stop();
-	*/
 
 	while(1){
 
@@ -113,6 +104,12 @@ int main(void){
 
 		i2c_stop();
 
+		i2c_start(MCP9801_READ);
+
+		recieved_data[0] = i2c_read_ack();
+		recieved_data[1] = i2c_read_nack();
+
+		i2c_stop();
 
 		sprintf(buffer, "%x %x %x \n\r", recieved_data[0], recieved_data[1], recieved_data[2]);
 		put_str(buffer);
