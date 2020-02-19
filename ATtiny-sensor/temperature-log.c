@@ -16,8 +16,10 @@ int main(){
     while(1){
 
         temperature = read_ta( 0x00 );
-        data[3] = (temperature >> 8);
-        data[4] = temperature & 0x00ff;        
+        data[3] = (char)(temperature >> 8);
+        data[4] = (char)temperature & 0x00ff;  
+        //data[3] = 0xa1;
+        //data[4] = 0xb2;      
         write_page_24xx512( 0x00, start_address, data, 9);
         start_address += 2;
 
