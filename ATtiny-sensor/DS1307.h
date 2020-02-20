@@ -7,7 +7,7 @@
 #define ADDRESS_DS1307 0xd0
 
 //leave one blank space at the start of buffer
-//followed by 7 bytes for date and time
-void read_time_ds1307(char *rx_buffer);
+//followed by 7 bytes for date and time (6 used+ day)
+void read_time_DS1307(char *rx_buffer);
 
 #endif
