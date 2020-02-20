@@ -31,6 +31,8 @@ int main(){
         eeprom_write_data[8] = date_time[5]; //date
         eeprom_write_data[9] = date_time[6]; //month
         eeprom_write_data[10]= date_time[7]; //years
+
+        eeprom_write_data[8] = start_address & 0x00ff;
     
         write_page_24xx512( 0x00, start_address, eeprom_write_data, 11);
         start_address += 8;
