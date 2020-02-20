@@ -93,11 +93,12 @@ int main(void){
 	uint8_t minutes;
 	//uint8_t to_send[3] = {0xab, 0xdc, 0x12};
 
+	put_str("test1\n\r");
+
 	i2c_start(DS1307_WRITE);
 	i2c_write(0x00);
 	i2c_write(0x00);
 	i2c_stop();
-
 
 	while(1){
 
@@ -132,6 +133,8 @@ int main(void){
 		seconds = i2c_read_ack();
 		minutes = i2c_read_nack();
 		i2c_stop();
+
+
 
 		recieved_data[4] = seconds;
 		recieved_data[5] = minutes;

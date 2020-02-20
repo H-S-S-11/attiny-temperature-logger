@@ -25,7 +25,7 @@ int main(){
 
         eeprom_write_data[3] = (char)(temperature >> 8);
         eeprom_write_data[4] = (char)temperature & 0x00ff;
-        eeprom_write_data[5] = date_time[1]++; //seconds
+        eeprom_write_data[5] = date_time[1]; //seconds
         eeprom_write_data[6] = date_time[2]; //minutes
         eeprom_write_data[7] = date_time[3]; //hours
         eeprom_write_data[8] = date_time[5]; //date
