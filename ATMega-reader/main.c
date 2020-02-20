@@ -30,6 +30,8 @@
 #define MCP24FC512_WRITE 0xA0
 #define MCP24FC512_READ 0xA1
 #define MCP9801_READ 0x91
+#define DS1307_WRITE 0xD0
+#define DS1307_READ 0xD1
 
 void init_uart0(void)
 {
@@ -87,8 +89,15 @@ int main(void){
 	uint8_t address_buf[] = {0x00,0x00};
 	char buffer[40];
 	uint8_t i;
+	uint8_t seconds;
+	uint8_t minutes;
 	//uint8_t to_send[3] = {0xab, 0xdc, 0x12};
-	
+
+	i2c_start(DS1307_WRITE);
+	i2c_write(0x00);
+	i2c_write(0x00);
+	i2c_stop();
+
 
 	while(1){
 
@@ -109,6 +118,23 @@ int main(void){
 		recieved_data[7] = i2c_read_nack();
 
 		i2c_stop();
+
+		i2c_start(MCP9801_READ);
+		recieved_data[6] = i2c_read_ack();
+		recieved_data[7] = i2c_read_nack();
+		i2c_stop();
+
+		i2c_start(DS1307_WRITE);
+		i2c_write(0x00);
+		i2c_stop();
+
+		i2c_start(DS1307_READ);
+		seconds = i2c_read_ack();
+		minutes = i2c_read_nack();
+		i2c_stop();
+
+		recieved_data[4] = seconds;
+		recieved_data[5] = minutes;
 
 		sprintf(buffer, "%x %x %x %x %x %x %x %x\n\r", recieved_data[0], recieved_data[1],
 			recieved_data[2], recieved_data[3], recieved_data[4], recieved_data[5],

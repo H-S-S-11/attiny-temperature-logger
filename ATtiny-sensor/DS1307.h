@@ -8,6 +8,8 @@
 
 //leave one blank space at the start of buffer
 //followed by 7 bytes for date and time (6 used+ day)
-void read_time_DS1307(char *rx_buffer);
+void read_time_DS1307(char buf[]);
+
+void set_seconds_DS1307(char seconds);
 
 #endif
