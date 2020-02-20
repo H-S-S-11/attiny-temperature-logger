@@ -6,7 +6,10 @@
 
 int main(){
 
-    clock_prescale_set(16);
+    clock_prescale_set(clock_div_16);
+
+
+    DDRB |= _BV(PB3);
     //3 bytes of write command
     //2 for temperature
     //6 for date/time
@@ -31,11 +34,11 @@ int main(){
         eeprom_write_data[8] = date_time[5]; //date
         eeprom_write_data[9] = date_time[6]; //month
         eeprom_write_data[10]= date_time[7]; //years
-
-        eeprom_write_data[8] = start_address & 0x00ff;
     
         write_page_24xx512( 0x00, start_address, eeprom_write_data, 11);
         start_address += 8;
+        
+        PINB |= _BV(PB3);
 
         _delay_ms(1000);
     }
