@@ -36,6 +36,6 @@ int main(){
         write_page_24xx512( 0x00, start_address, eeprom_write_data, 11);
         start_address += 8;
 
-        _delay_ms(1000);
+        _delay_ms(10000);
     }
 }

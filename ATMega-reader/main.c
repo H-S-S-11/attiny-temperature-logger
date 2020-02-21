@@ -1,6 +1,4 @@
 /*    
-    Copyright (C) 2019 Elia Ritterbusch 
-
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -100,7 +98,7 @@ int main(void){
 	i2c_write(0x00);
 	i2c_stop();
 
-	while(1){
+	while(address < 0xfff0){
 
 		address_buf[0] = (uint8_t)(address >> 8);
 		address_buf[1] = (uint8_t)address & 0x00ff;
@@ -137,16 +135,16 @@ int main(void){
 
 
 
-		recieved_data[6] = seconds;
-		recieved_data[7] = minutes;
+		//recieved_data[6] = seconds;
+		//recieved_data[7] = minutes;
 
-		sprintf(buffer, "%x %x %x %x %x %x %x %x      %x %x\n\r", recieved_data[0], recieved_data[1],
+		sprintf(buffer, "%x,%x,%x,%x,%x,%x,%x,%x,%x%x\r", recieved_data[0], recieved_data[1],
 			recieved_data[2], recieved_data[3], recieved_data[4], recieved_data[5],
 			recieved_data[6], recieved_data[7], address_buf[0], address_buf[1]);
 
 		put_str(buffer);	
 		
-		_delay_ms(1000);
+		//_delay_ms(1);
 	}
 	
 	return 0;
