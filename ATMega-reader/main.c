@@ -137,8 +137,8 @@ int main(void){
 
 		//recieved_data[6] = seconds;
 		//recieved_data[7] = minutes;
-
-		sprintf(buffer, "%x,%x,%x,%x,%x,%x,%x,%x,%x%x\r", recieved_data[0], recieved_data[1],
+		// temp,temp,ss:mm:hh dd/mm/yyyy,addr
+		sprintf(buffer, "%02x,%02x,%02x:%02x:%02x %02x/%02x/20%02x,%x%x\r", recieved_data[0], recieved_data[1],
 			recieved_data[2], recieved_data[3], recieved_data[4], recieved_data[5],
 			recieved_data[6], recieved_data[7], address_buf[0], address_buf[1]);
 
