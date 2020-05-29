@@ -1,0 +1,185 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny85-20SU U?
+U 1 1 5ED01C17
+P 3650 1800
+F 0 "U?" H 3121 1846 50  0000 R CNN
+F 1 "ATtiny85-20SU" H 3121 1755 50  0000 R CNN
+F 2 "Package_SO:SOIJ-8_5.3x5.3mm_P1.27mm" H 3650 1800 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 3650 1800 50  0001 C CNN
+	1    3650 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5ED029B8
+P 3650 2550
+F 0 "#PWR?" H 3650 2300 50  0001 C CNN
+F 1 "GND" H 3655 2377 50  0000 C CNN
+F 2 "" H 3650 2550 50  0001 C CNN
+F 3 "" H 3650 2550 50  0001 C CNN
+	1    3650 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5ED0320C
+P 3650 1100
+F 0 "#PWR?" H 3650 950 50  0001 C CNN
+F 1 "+5V" H 3665 1273 50  0000 C CNN
+F 2 "" H 3650 1100 50  0001 C CNN
+F 3 "" H 3650 1100 50  0001 C CNN
+	1    3650 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Memory_EEPROM:24LC512 U?
+U 1 1 5ED03BC6
+P 6800 1600
+F 0 "U?" H 6800 2081 50  0000 C CNN
+F 1 "24FC512" H 6800 1990 50  0000 C CNN
+F 2 "" H 6800 1600 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21754M.pdf" H 6800 1600 50  0001 C CNN
+	1    6800 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 1100 3650 1200
+Wire Wire Line
+	3650 2550 3650 2400
+$Comp
+L Sensor_Temperature:MCP9804_MSOP U?
+U 1 1 5ED05C32
+P 5750 2950
+F 0 "U?" H 6194 2996 50  0000 L CNN
+F 1 "MCP9801" H 6194 2905 50  0000 L CNN
+F 2 "Package_SO:MSOP-8_3x3mm_P0.65mm" H 4750 2450 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf" H 5500 3400 50  0001 C CNN
+	1    5750 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Timer_RTC:DS1307ZN+ U?
+U 1 1 5ED06903
+P 8550 2350
+F 0 "U?" H 9094 2396 50  0000 L CNN
+F 1 "DS1307ZN+" H 9094 2305 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 8550 1850 50  0001 C CNN
+F 3 "https://datasheets.maximintegrated.com/en/ds/DS1307.pdf" H 8550 2350 50  0001 C CNN
+	1    8550 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery_Cell BT?
+U 1 1 5ED073D8
+P 2400 3600
+F 0 "BT?" H 2518 3696 50  0000 L CNN
+F 1 "Battery_Cell" H 2518 3605 50  0000 L CNN
+F 2 "" V 2400 3660 50  0001 C CNN
+F 3 "~" V 2400 3660 50  0001 C CNN
+	1    2400 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery_Cell BT?
+U 1 1 5ED07D00
+P 2400 4200
+F 0 "BT?" H 2518 4296 50  0000 L CNN
+F 1 "Battery_Cell" H 2518 4205 50  0000 L CNN
+F 2 "" V 2400 4260 50  0001 C CNN
+F 3 "~" V 2400 4260 50  0001 C CNN
+	1    2400 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5ED08D5E
+P 3700 3700
+F 0 "R?" H 3770 3746 50  0000 L CNN
+F 1 "10k" H 3770 3655 50  0000 L CNN
+F 2 "" V 3630 3700 50  0001 C CNN
+F 3 "~" H 3700 3700 50  0001 C CNN
+	1    3700 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5ED097B7
+P 4150 3700
+F 0 "R?" H 4220 3746 50  0000 L CNN
+F 1 "10k" H 4220 3655 50  0000 L CNN
+F 2 "" V 4080 3700 50  0001 C CNN
+F 3 "~" H 4150 3700 50  0001 C CNN
+	1    4150 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5ED09F32
+P 5100 4050
+F 0 "C?" H 5215 4096 50  0000 L CNN
+F 1 "100n" H 5215 4005 50  0000 L CNN
+F 2 "" H 5138 3900 50  0001 C CNN
+F 3 "~" H 5100 4050 50  0001 C CNN
+	1    5100 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5ED0B68A
+P 5650 4050
+F 0 "C?" H 5765 4096 50  0000 L CNN
+F 1 "100n" H 5765 4005 50  0000 L CNN
+F 2 "" H 5688 3900 50  0001 C CNN
+F 3 "~" H 5650 4050 50  0001 C CNN
+	1    5650 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5ED0B814
+P 6200 4050
+F 0 "C?" H 6315 4096 50  0000 L CNN
+F 1 "100n" H 6315 4005 50  0000 L CNN
+F 2 "" H 6238 3900 50  0001 C CNN
+F 3 "~" H 6200 4050 50  0001 C CNN
+	1    6200 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5ED0B8DB
+P 6700 4050
+F 0 "C?" H 6815 4096 50  0000 L CNN
+F 1 "100n" H 6815 4005 50  0000 L CNN
+F 2 "" H 6738 3900 50  0001 C CNN
+F 3 "~" H 6700 4050 50  0001 C CNN
+	1    6700 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5ED0BFC4
+P 7250 4000
+F 0 "C?" H 7365 4046 50  0000 L CNN
+F 1 "4.7u" H 7365 3955 50  0000 L CNN
+F 2 "" H 7288 3850 50  0001 C CNN
+F 3 "~" H 7250 4000 50  0001 C CNN
+	1    7250 4000
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

@@ -21,7 +21,10 @@ int main(){
     
     while(1){
 
-        temperature = read_ta( 0x00 );
+        do{
+            temperature = read_ta( 0x00 );
+        }while(temperature >= 0xff80);
+        
         read_time_DS1307(date_time);
 
         eeprom_write_data[3] = (char)(temperature >> 8);
