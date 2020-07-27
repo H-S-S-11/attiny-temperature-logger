@@ -1,0 +1,163 @@
+Cmp-Mod V01 Created by PcbNew   date = 03/06/2020 13:31:49
+
+BeginCmp
+TimeStamp = 5EF0874E
+Path = /5ED05C32
+Reference = U3;
+ValeurCmp = MCP9801;
+IdModule  = Package_SO:SOIC-8_3.9x4.9mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF085F7
+Path = /5ED073D8
+Reference = BT1;
+ValeurCmp = Battery_Cell;
+IdModule  = Battery:BatteryHolder_Keystone_3001_1x12mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF08D31
+Path = /5ED07D00
+Reference = BT2;
+ValeurCmp = Battery_Cell;
+IdModule  = Battery:BatteryHolder_Keystone_3001_1x12mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF0863E
+Path = /5ED1C3AA
+Reference = C1;
+ValeurCmp = 4.7u;
+IdModule  = Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF0864F
+Path = /5ED09F32
+Reference = C2;
+ValeurCmp = 100n;
+IdModule  = Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF08660
+Path = /5ED1818D
+Reference = C3;
+ValeurCmp = 4.7u;
+IdModule  = Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF08671
+Path = /5ED0BFC4
+Reference = C4;
+ValeurCmp = 4.7u;
+IdModule  = Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF08682
+Path = /5ED0B8DB
+Reference = C5;
+ValeurCmp = 100n;
+IdModule  = Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF08693
+Path = /5ED0B814
+Reference = C6;
+ValeurCmp = 100n;
+IdModule  = Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF086A4
+Path = /5ED0B68A
+Reference = C7;
+ValeurCmp = 100n;
+IdModule  = Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF086B5
+Path = /5ED1C3A4
+Reference = C8;
+ValeurCmp = 100n;
+IdModule  = Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF08DCC
+Path = /5EDBF810
+Reference = J1;
+ValeurCmp = Conn_01x05;
+IdModule  = Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF086DF
+Path = /5ED08D5E
+Reference = R1;
+ValeurCmp = 10k;
+IdModule  = Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF086F0
+Path = /5ED097B7
+Reference = R2;
+ValeurCmp = 10k;
+IdModule  = Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF0870D
+Path = /5ED01C17
+Reference = U1;
+ValeurCmp = ATtiny85-20SU;
+IdModule  = Package_SO:SOIJ-8_5.3x5.3mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF08F18
+Path = /5ED166EE
+Reference = U2;
+ValeurCmp = NCP1117-5.0_TO252;
+IdModule  = Package_TO_SOT_SMD:TO-252-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF0876B
+Path = /5ED06903
+Reference = U4;
+ValeurCmp = DS1307ZN+;
+IdModule  = Package_SO:SOIC-8_3.9x4.9mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF08788
+Path = /5ED03BC6
+Reference = U5;
+ValeurCmp = 24FC512;
+IdModule  = Package_SO:SOIJ-8_5.3x5.3mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EF087A3
+Path = /5ED4DF2F
+Reference = Y1;
+ValeurCmp = Crystal;
+IdModule  = Crystal:Crystal_C38-LF_D3.0mm_L8.0mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 5EFCC523
+Path = /5ED847D7
+Reference = R3;
+ValeurCmp = 10k;
+IdModule  = Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder;
+EndCmp
+
+EndListe
